@@ -1,0 +1,366 @@
+:root {
+  --font-family: Montserrat, Inter, Avenir, Helvetica, Arial, sans-serif;
+  --main-color: #213547;
+  --background-color: #ffffff;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--main-color);
+  background-color: var(--background-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  img {
+    height: 70px;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+
+      li {
+        margin-left: 1rem;
+        color: black;
+        font-family: var(--font-family);
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  height: 200px;
+
+  img.footer-logo {
+    width: 120px; // Taille du logo
+    height: auto; // Conserve les proportions de l'image
+    margin-bottom: 10px;
+  }
+  .footer-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+.banniere {
+  width: 100%;
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  border-radius: 20px;
+  color: white;
+  position: relative; /* Positionner le pseudo-élément par rapport à l'élément principal */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+
+  /* Pseudo-élément pour l'overlay sombre */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Couleur d'overlay sombre */
+    border-radius: 20px;
+    z-index: 0;
+  }
+}
+.banniere-title {
+  position: relative;
+  z-index: 1;
+  font-size: 66px;
+  font-family: var(--font-family);
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px;
+  gap: 60px;
+}
+.rent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 80px;
+  box-sizing: border-box;
+  padding: 109px;
+  background-color: rgba(246, 246, 246, 1);
+  border-radius: 25px;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+.link {
+  text-decoration: none !important;
+}
+.card-title {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.slideshow-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 10px;
+  margin-top: 40px;
+  border-radius: 25px;
+  height: fit-content;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.slide-number {
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+}
+.details-title {
+  color: rgba(255, 96, 96, 1);
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51.34px;
+  text-align: left;
+  margin: 0;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.details-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.tag {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 96, 96, 1);
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+}
+.details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.hote-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.hote {
+  display: flex;
+  flex-direction: row;
+
+  & p {
+    color: rgba(255, 96, 96, 1);
+    font-family: Montserrat;
+    font-size: 18px;
+  }
+}
+.host-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-left: 10px; /* Ajoute un espace entre le nom et l'avatar */
+}
+.rating {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.details-location {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 0;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 44px 44px 0;
+}
+.about-collapse {
+  margin: 20px;
+  width: 75%;
+  padding-top: 30px;
+}
+.collapse {
+  margin-bottom: 27px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  //width: 50%;//
+
+  &.open {
+    // On applique .open à .collapse lorsqu'il est ouvert
+    .collapse-header .collapse-icon {
+      transform: rotate(180deg); // Rotation de la flèche lorsque ouvert
+    }
+
+    .collapse-content {
+      max-height: 500px; // Hauteur maximale pour afficher le contenu
+      padding: 10px; // Ajouter un peu de padding
+    }
+  }
+
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 96, 96, 1);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    text-align: left;
+    height: 50px;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none; // Retirer le focus
+    }
+  }
+
+  .collapse-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease; // Transition pour la rotation de la flèche
+    padding: 20px;
+  }
+
+  .collapse-content {
+    max-height: 0; // Par défaut, le contenu est caché
+    overflow: hidden; // Cacher le contenu lorsqu'il est caché
+    // transition: max-height 0.3s ease; // Transition de la hauteur du contenu
+  }
+}
+
+.collapse-container {
+  display: flex;
+  justify-content: space-between; /* Espacement entre les éléments */
+  gap: 20px; /* Optionnel, pour ajouter un espace entre les collapses */
+  margin-top: 20px;
+}
+.collapse-details-appart {
+  width: 50%;
+}
+.container {
+  margin: 0 37px;
+
+  box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+}
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  text-align: center;
+}
+.error-code {
+  font-family: Montserrat, sans-serif;
+  font-size: 258px;
+  font-weight: 700;
+  color: rgba(255, 96, 96, 1);
+  position: relative;
+  bottom: 40px;
+  margin: 0;
+}
+.error-message {
+  font-family: Montserrat, sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: rgba(255, 96, 96, 1);
+}
+
+.back-to-home {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
