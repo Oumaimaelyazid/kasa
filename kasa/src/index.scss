@@ -466,6 +466,8 @@ footer {
   }
   .card {
     width: 100%;
+    max-height: 300px;
+    overflow: hidden;
   }
   .card img {
     height: fit-content;
