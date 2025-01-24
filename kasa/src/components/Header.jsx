@@ -1,27 +1,34 @@
-import { Link } from 'react-router-dom';
-import logo from '../assets/KASA.png'; 
+import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/KASA.png";
 
 const Header = () => {
   return (
-   <div>
-    <header>
-      <img src={logo} alt="logo de kasa"/>
-      <nav>
+    <div>
+      <header>
+        <img src={logo} alt="logo de kasa" />
+        <nav>
           <ul>
             <li>
-              <Link to="/home">Accueil</Link>
+              <NavLink
+                to="/home"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                ACCUEIL
+              </NavLink>
             </li>
             <li>
-              <Link to="/about">A Propos</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                A PROPOS
+              </NavLink>
             </li>
-      
           </ul>
         </nav>
-    </header>
+      </header>
     </div>
-
   );
 };
-
 
 export default Header;

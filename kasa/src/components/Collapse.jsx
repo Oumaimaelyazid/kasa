@@ -1,25 +1,34 @@
 import React, { useEffect, useState } from "react";
 import arrowUp from "../assets/arrow-up.png";
 
-const Collapse = ({ title, content, className, isOpen, onToggle }) => {
-  const [height, setHeight] = useState("0px");
+const Collapse = ({ title, content }) => {
+  const [isVisible, setVisible] = useState(false);
+  const [collapseHeight, setCollapseHeight] = useState("51px");
 
   useEffect(() => {
-    if (isOpen) {
-      setHeight("200px");
+    if (isVisible) {
+      setCollapseHeight("200px");
     } else {
-      setHeight("0px");
+      setCollapseHeight("51px");
     }
-  }, [isOpen]);
+  }, [isVisible]);
+
+  const toggleCollapse = () => {
+    setVisible(!isVisible);
+  };
 
   return (
-    <div className={`collapse ${className || ""}`}>
-      <button className="collapse-header" onClick={onToggle}>
+    <div className="collapse" style={{ height: collapseHeight }}>
+      <button className="collapse-header" onClick={toggleCollapse}>
         {title}
-        <img className={`collapse-icon`} src={arrowUp} alt="Fleche" />
+        <img
+          className={`collapse-icon ${isVisible ? "rotate" : ""}`}
+          src={arrowUp}
+          alt="Fleche"
+        />
       </button>
 
-      <div className={`collapse-content`} style={{ maxHeight: height }}>
+      <div className="collapse-content">
         <p>{content}</p>
       </div>
     </div>

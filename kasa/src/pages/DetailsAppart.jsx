@@ -16,20 +16,7 @@ const DetailsAppart = () => {
     return <p>Logement introuvable</p>;
   }
   // État pour gérer les collapses ouverts
-  const [openCollapse, setOpenCollapse] = useState(null);
-  const [isOpenDescription, setOpenDescription] = useState(false);
-  const [isOpenEquipement, setOpenEquipement] = useState(false);
 
-  const toggleCollapseDescription = (collapseId) => {
-    // Si le collapse est déjà ouvert, le fermer. Sinon, l'ouvrir.
-    //setOpenCollapse(openCollapse === collapseId ? null : collapseId);//
-    setOpenDescription(!isOpenDescription);
-  };
-  const toggleCollapseEquipement = (collapseId) => {
-    // Si le collapse est déjà ouvert, le fermer. Sinon, l'ouvrir.
-    //setOpenCollapse(openCollapse === collapseId ? null : collapseId);//
-    setOpenEquipement(!isOpenEquipement);
-  };
   return (
     <div className="container">
       {/* Affichage du composant Slideshow avec les images */}
@@ -60,19 +47,10 @@ const DetailsAppart = () => {
 
       {/* Utilisation du composant Collapse pour Description et Equipements */}
       <div className="collapse-container">
-        <Collapse
-          title="Description"
-          content={logement.description}
-          className="collapse-details-appart"
-          onToggle={toggleCollapseDescription}
-          isOpen={isOpenDescription}
-        />
+        <Collapse title="Description" content={logement.description} />
         <Collapse
           title="Equipements"
           content={logement.equipments.join(", ")}
-          className="collapse-details-appart"
-          onToggle={toggleCollapseEquipement}
-          isOpen={isOpenEquipement}
         />
       </div>
     </div>
