@@ -388,7 +388,7 @@ footer {
   }
   .banniere-title {
     font-size: 40px; /* Réduction de la taille du texte pour mobile */
-    padding-left: 20px;
+    padding-left: 12px;
   }
   .home-container {
     margin: 20px;
@@ -451,7 +451,7 @@ footer {
   }
   .banniere-title {
     font-size: 30px; /* Réduction de la taille du texte pour mobile */
-    padding-left: 20px;
+    padding-left: 12px;
   }
   .rent {
     display: grid;
@@ -486,6 +486,7 @@ footer {
     .collapse-header {
       font-size: 20px;
       border-radius: 5px;
+      padding: 16px;
     }
     .collapse-icon {
       width: 20px;
@@ -551,10 +552,12 @@ footer {
     flex-direction: row-reverse;
     justify-content: space-between;
     gap: 30px;
+    align-items: center;
   }
   .hote {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     & p {
       font-size: 19px;
